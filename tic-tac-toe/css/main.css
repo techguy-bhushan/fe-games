@@ -4,45 +4,50 @@
 }
 
 .game {
-  border: 5px solid black;
   position: relative;
+  background-color: darkkhaki;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .game_title {
   text-align: center;
-  color: rgb(103, 103, 222);
-  margin-top: 2rem;
-  font-size: 3rem;
-  text-shadow: 2px 2px grey;
+  padding-top: 20px;
+  color: navajowhite;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 10px rgb(189 183 107);
+  font-family: cursive;
 }
 
 .players {
-  font-size: 1rem;
-  font-weight: bold;
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .players h2 {
   margin: 10px;
+  font-size: 30px;
 }
 
-
 .player1 {
-  border: 3px solid red;
+  border: 3px solid whitesmoke;
   width: 15%;
   text-align: center;
   margin: 10px;
+  color: beige;
 }
 
 .player2 {
-  border: 3px solid green;
+  border: 3px solid whitesmoke;
   width: 15%;
   text-align: center;
   margin: 10px;
+  color: beige;
 }
 
 .active_player {
-  box-shadow: 8px 8px 8px rgb(160, 160, 219);
+  background-color: red;
+  box-shadow: 2px 2px 3px rgb(255, 0, 0);
 }
 
 .backdrop {
@@ -59,9 +64,9 @@
 .result {
   border: 4px solid black;
   box-shadow: 4px 4px 4px rgb(160, 160, 219);
-  width: 80%;
-  margin-left: 10%;
-  height: 10vh;
+  width: 50%;
+  margin-left: 25%;
+  height: 20vh;
   position: fixed;
   top: 25%;
   left: 0;
@@ -71,8 +76,10 @@
 }
 
 .result h2 {
+  font-size: 40px;
+  color: darkgreen;
   text-align: center;
-  margin-top: 0 0 1rem 0;
+  margin: 15px 5px;
 }
 
 .result-close {
@@ -81,38 +88,173 @@
 }
 
 .result-button {
-  text-align: right;
-  display: inline-block;
+  color: antiquewhite;
+  font-size: 35px;
   background-color: red;
 }
 
 .rows {
-  display: block;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .game_layout {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  margin: 50px 0px;
+  display: inline-block;
 }
 
 .game_layout .btn {
   display: inline-block;
-  margin: 0.5rem;
-  box-shadow: 3px 3px 3px rgb(160, 160, 219);
-  height: 6vh;
-  width: 6vh;
+  border: none;
+  box-shadow: 0px 0px 0px 3px rgb(0, 0, 0);
+  height: 16vh;
+  width: 16vh;
+  padding: 0;
+  font-size: 60px;
+  font-family: cursive;
+}
+
+@media(max-width :839px) {
+  .result h2 {
+    font-size: 30px;
+  }
+
+  .result-button {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+}
+
+@media(max-width: 642px) {
+  .result {
+    width: 70%;
+    margin-left: 15%;
+    height: 18vh;
+  }
+
+  .result-button {
+    font-size: 25px;
+  }
+}
+
+@media(max-width: 458px) {
+  .result h2 {
+    font-size: 25px;
+  }
+
+  .result-button {
+    font-size: 20px;
+  }
+
+  .game_layout {
+    margin: 70px 0px;
+  }
+}
+
+@media(max-width: 385px) {
+  .result-button {
+    font-size: 20px;
+  }
+
+  .result h2 {
+    margin: 10px 0px;
+    font-size: 20px;
+  }
+
+}
+
+@media(max-width : 870px) {
+  .player1 {
+    width: 20%;
+  }
+
+  .player2 {
+    width: 20%;
+  }
+}
+
+@media(max-height: 740px) {
+  .game_layout .btn {
+    width: 14vh;
+    height: 14vh;
+  }
+}
+
+@media(max-width : 650px) {
+  .player1 {
+    width: 26%;
+  }
+
+  .player2 {
+    width: 26%;
+  }
+}
+
+@media(max-width :501px) {
+  .player1 {
+    width: 30%;
+  }
+
+  .player2 {
+    width: 30%;
+  }
+}
+
+@media(max-width: 465px) {
+  .game_layout .btn {
+    height: 13vh;
+    width: 13vh;
+  }
+
+  .players h2 {
+    font-size: 20px;
+  }
+
+  .players h2 {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 401px) {
+  .game_title {
+    font-size: 3rem;
+  }
+
+  .game_layout .btn {
+    font-size: 40px;
+  }
+
+  .game_layout {
+    margin: 75px 0px;
+
+  }
+}
+
+@media(max-width: 287px) {
+  .game_title {
+    font-size: 2.5rem;
+    padding: 5px;
+  }
+
+  .game_layout .btn {
+    height: 11vh;
+    width: 11vh;
+  }
+
+  .result {
+    top: 16%;
+  }
 }
 
 .avoid_clicks {
   pointer-events: none;
 }
 
-.player1_button {
-  background-color: red;
+.player1_button::after {
+  content: "O";
 }
 
-.player2_button {
-  background-color: green;
+.player2_button::after {
+  content: "X";
 }
-
