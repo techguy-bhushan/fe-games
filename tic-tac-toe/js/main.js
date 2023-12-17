@@ -168,10 +168,7 @@ function resetAll() {
   console.log("reset map", holdKeyValues);
 }
 
-function activeCurrentPlayerAndDeactivePreviousPlayer(
-  currentPlayerTitleElement,
-  previosPlayerTitleElement
-) {
+function activeCurrentPlayerAndDeactivePreviousPlayer(currentPlayerTitleElement, previosPlayerTitleElement) {
   currentPlayerTitleElement.classList.add("active_player");
   previosPlayerTitleElement.classList.remove("active_player");
 }
